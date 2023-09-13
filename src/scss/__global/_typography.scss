@@ -1,0 +1,27 @@
+h1 {
+	@include font(24, 29);
+	color: $color-cape-cod;
+	@include media(">=lg") {
+		@include font(36, 44);
+	}
+}
+
+h2 {
+	@include media(">=lg") {
+		@include font(18, 22);
+	}
+}
+
+h3 {
+	@include font(12, 15);
+	color: $color-cape-cod;
+	@include media(">=lg") {
+		@include font(16, 19);
+	}
+}
+
+p {
+	@include media(">=lg") {
+		@include font(18, 22);
+	}
+}

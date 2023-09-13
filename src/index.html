@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Checkout page</title>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1" />
+	</head>
+	<body>
+		<header class="header">
+			<div class="container">
+				<h1>Checkout</h1>
+			</div>
+		</header>
+		<main>
+			<section class="block-cart">
+				<div class="container">
+					<div class="block-cart__checkout">
+						<div class="block-cart__items">
+							<article class="block-cart__item">
+								<a
+									href="#"
+									target="_self">
+									<figure class="block-cart__item-img-wrapper">
+										<img
+											alt="Vintage Backbag"
+											src="./images/home/photo1.png"
+											class="block-cart__item-img" />
+									</figure>
+								</a>
+								<div class="block-cart__item-description">
+									<a
+										href="#"
+										target="_self"
+										class="block-cart__item-name">
+										<h3>Vintage Backbag</h3>
+									</a>
+									<div class="block-cart__prices">
+										<p class="block-cart__price">
+											$
+											<span class="block-cart__initial-price">54.99</span>
+											<span class="block-cart__current-price">54.99</span>
+											<span class="block-cart__old-price">$94.99</span>
+										</p>
+									</div>
+									<div class="block-cart__counter">
+										<div class="block-cart__math">
+											<p class="block-cart__math--subt block-cart__math-icons">
+												-
+											</p>
+										</div>
+										<input
+											type="text"
+											class="block-cart__quantity"
+											value="1" />
+										<div class="block-cart__math">
+											<p class="block-cart__math--add block-cart__math-icons">
+												+
+											</p>
+										</div>
+									</div>
+								</div>
+							</article>
+							<article class="block-cart__item">
+								<a
+									href="#"
+									target="_self">
+									<figure class="block-cart__item-img-wrapper">
+										<img
+											alt="Levi Shoes"
+											src="./images/home/photo2.png"
+											class="block-cart__item-img" />
+									</figure>
+								</a>
+								<div class="block-cart__item-description">
+									<a
+										href="#"
+										target="_self"
+										class="block-cart__item-name">
+										<h3>Levi Shoes</h3>
+									</a>
+									<div class="block-cart__prices">
+										<p class="block-cart__price">
+											$
+											<span class="block-cart__initial-price">74.99</span>
+											<span class="block-cart__current-price">74.99</span>
+											<span class="block-cart__old-price">$124.99</span>
+										</p>
+									</div>
+									<div class="block-cart__counter">
+										<div class="block-cart__math">
+											<p class="block-cart__math--subt block-cart__math-icons">
+												-
+											</p>
+										</div>
+										<input
+											type="text"
+											class="block-cart__quantity"
+											value="1" />
+										<div class="block-cart__math">
+											<p class="block-cart__math--add block-cart__math-icons">
+												+
+											</p>
+										</div>
+									</div>
+								</div>
+							</article>
+							<div class="block-cart__summary">
+								<div class="block-cart__summary-item">
+									<div>
+										<p>Shipping</p>
+									</div>
+									<div>
+										<p class="block-cart__total">
+											$ <span data-cart-shipping>19</span>
+										</p>
+									</div>
+								</div>
+								<div class="block-cart__summary-item">
+									<div>
+										<p>Total</p>
+									</div>
+									<div>
+										<p class="block-cart__total">
+											$ <span data-cart-total>148.98</span>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="block-form">
+							<form method="post">
+								<div class="block-form__info-group">
+									<h2 class="block-form__subtitle">Contact infomation</h2>
+									<div class="block-form__element">
+										<label
+											for="email"
+											class="block-form__label"
+											>E-mail</label
+										>
+										<div class="block-form__input-box">
+											<input
+												type="email"
+												id="email"
+												name="email"
+												placeholder="Enter your email.."
+												class="block-form__input"
+												required />
+										</div>
+									</div>
+									<div class="block-form__element">
+										<label
+											for="phone"
+											class="block-form__label"
+											>Phone</label
+										>
+										<div class="block-form__input-box">
+											<input
+												type="tel"
+												id="phone"
+												name="phone"
+												placeholder="Enter your phone.."
+												class="block-form__input" />
+										</div>
+									</div>
+								</div>
+								<div class="block-form__info-group">
+									<h2 class="block-form__subtitle">Shipping address</h2>
+									<div class="block-form__element">
+										<label
+											for="name"
+											class="block-form__label">
+											Full name
+										</label>
+										<div class="block-form__input-box">
+											<input
+												type="text"
+												id="name"
+												name="name"
+												value="Rodney Cotton"
+												class="block-form__input block-form__input--name"
+												required />
+										</div>
+									</div>
+									<div class="block-form__element">
+										<label
+											for="address"
+											class="block-form__label">
+											Address
+										</label>
+										<div class="block-form__input-box">
+											<input
+												type="text"
+												id="address"
+												name="address"
+												placeholder="Your address.."
+												class="block-form__input"
+												required />
+										</div>
+									</div>
+									<div class="block-form__element">
+										<label
+											for="city"
+											class="block-form__label">
+											City
+										</label>
+										<div class="block-form__input-box">
+											<input
+												type="text"
+												id="city"
+												name="city"
+												placeholder="Your city.."
+												class="block-form__input"
+												required />
+										</div>
+									</div>
+									<div class="block-form__group">
+										<div class="block-form__element block-form__group--el">
+											<label
+												for="country"
+												class="block-form__label">
+												Country
+											</label>
+											<details class="block-form__custom-select">
+												<summary class="block-form__radios">
+													<input
+														type="radio"
+														name="item"
+														id="default"
+														class="block-form__radio"
+														title="Your country.."
+														checked />
+													<input
+														type="radio"
+														name="item"
+														id="item1"
+														class="block-form__radio"
+														title="Poland" />
+													<input
+														type="radio"
+														name="item"
+														id="item2"
+														class="block-form__radio"
+														title="Czech Republic" />
+													<input
+														type="radio"
+														name="item"
+														id="item3"
+														class="block-form__radio"
+														title="USA" />
+													<input
+														type="radio"
+														name="item"
+														id="item4"
+														class="block-form__radio"
+														title="Italy" />
+													<input
+														type="radio"
+														name="item"
+														id="item5"
+														class="block-form__radio"
+														title="Albania" />
+												</summary>
+												<ul class="block-form__list">
+													<li class="block-form__list-item">
+														<label
+															for="item1"
+															class="block-form__list-label">
+															Poland
+														</label>
+													</li>
+													<li class="block-form__list-item">
+														<label
+															for="item2"
+															class="block-form__list-label"
+															>Czech Republic</label
+														>
+													</li>
+													<li class="block-form__list-item">
+														<label
+															for="item3"
+															class="block-form__list-label"
+															>USA</label
+														>
+													</li>
+													<li class="block-form__list-item">
+														<label
+															for="item4"
+															class="block-form__list-label"
+															>Italy</label
+														>
+													</li>
+													<li class="block-form__list-item">
+														<label
+															for="item5"
+															class="block-form__list-label"
+															>Albania</label
+														>
+													</li>
+												</ul>
+											</details>
+										</div>
+										<div class="block-form__element block-form__group--el">
+											<label
+												for="code"
+												class="block-form__label">
+												Postal code
+											</label>
+											<div class="block-form__input-box">
+												<input
+													type="text"
+													id="code"
+													name="code"
+													placeholder="Your postal code.."
+													class="block-form__input"
+													required />
+											</div>
+										</div>
+									</div>
+									<div
+										class="block-form__checkbox-container"
+										data-form-checkbox-container>
+										<input
+											id="save"
+											name="save"
+											type="checkbox"
+											class="block-form__checkbox"
+											data-form-checkbox />
+										<label
+											for="save"
+											class="block-form__label block-form__label--checkbox">
+											Save this information for next time
+										</label>
+									</div>
+									<div class="block-form__button">
+										<input
+											class="block-form__input--submit"
+											type="submit"
+											value="Continue" />
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="main-footer">
+			<div class="container">
+				<p class="main-footer__owner">
+					created by
+					<a
+						href="#"
+						target="_blank"
+						rel="noopener"
+						class="main-footer__owner-name"
+						>username</a
+					>
+					- devChallenges.io
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

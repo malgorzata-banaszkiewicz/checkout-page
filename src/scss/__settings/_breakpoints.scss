@@ -1,0 +1,78 @@
+/*
+----------------------------------------
+BREAKPOINTS
+*/
+
+$breakpoints: (
+  xs: 375px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1680px,
+  max: 1800px,
+);
+
+/* stylelint-disable */
+
+// If you want to check all devices dimensions, you can use this table of breakpoints.
+// For using all of them, uncomment line 29, and comment line 6.
+//
+//  ---------------------------------------------------------------------------------------
+//  Var     |   Device  |   System  |   Orientation |   Eg. device
+//  ---------------------------------------------------------------------------------------
+//  xl1366  |   Desktop |   ***     |   -           |   ***
+//  lg1280  |   Tablet  |   Android |   Landscape   |   Samsung Galaxy Tab 10
+//  lg1024  |   Tablet  |   Apple   |   Landscape   |   iPad
+//  lg800   |   Tablet  |   Android |   Portrait    |   Samsung Galaxy Tab 10
+//  lg768   |   Tablet  |   Apple   |   Portrait    |   iPad ***
+//  md667   |   Phone   |   Apple   |   Landscape   |   iPhone 6/6S, 7, 8
+//  md640   |   Phone   |   Android |   Landscape   |   Samsung Galaxy S7
+//  md568   |   Phone   |   Apple   |   Landscape   |   iPhone 5
+//  sm480   |   Phone   |   Android |   Portrait    |   LG G5, Samsung Galaxy Note 5
+//  sm414   |   Phone   |   Apple   |   Portrait    |   iPhone 6+,6S+, 7+, 8+
+//  sm375   |   Phone   |   Apple   |   Portrait    |   iPhone 6, 6S, 7, 8, X
+//  xs360   |   Phone   |   Android |   Portrait    |   Samsung Galaxy S7, S7 Edge, S8, S8+
+//  xs320   |   Phone   |   Apple   |   Portrait    |   iPhone 5
+//  ---------------------------------------------------------------------------------------
+
+// $breakpoints: (xs320: 320px, xs360: 360px, sm375: 375px, sm414: 414px, sm480: 480px, md568: 568px, md640: 640px, md667: 667px, lg768: 768px, lg800: 800px, lg1024: 1024px, lg1280: 1280px, xl1366: 1366px);
+
+// body::before {
+// 	content: '#{$breakpoints}';
+// 	display: none; }
+
+// How it works?
+//
+// $breakpoints is variable for include-media mixins http://include-media.com/
+// They are loaded by default from __vendors/_include-media.scss
+//
+// You can name breakpoint as you want. You can also add as many breakpoints you need.
+// For example you can define such breakpoints:
+//
+// > $breakpoints: (xs: 320px, sm: 768px, md: 1024px, lg: 1200px, xl: 1400px);
+//
+// Then, you can include them:
+//
+// > @include media('>=sm') { /* CSS code here */ }
+//
+// It gonna compile it to:
+//
+// > @media (min-width: 768px) { /* CSS code here */ }
+//
+// Default set of breakpoints are inspired by Bootstrap 4 breakpoints:
+// https://v4-alpha.getbootstrap.com/layout/grid/#grid-options
+//
+// Important! When you declare media higher than a breakpoint, do it with equal sign like:
+//
+// > @include media('>=lg') { /* CSS code here */ }
+//
+// When you declare media lower than a breakpoint, do it without equal sign like:
+//
+// > @include media('<lg') { /* CSS code here */ }
+//
+// Of course more appreciated is declaring only >= values, mobile first.
+//
+// Breakpoints are deliver to js/__constants/breakpoints.js in body::before pseudoelement
+/* stylelint-enable */

@@ -1,0 +1,340 @@
+.block-form {
+	@include media(">=xxl") {
+		width: rem(500);
+	}
+	&__subtitle {
+		margin-bottom: rem(10);
+	}
+	&__info-group {
+		margin-bottom: rem(58);
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+	&__element {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: rem(10);
+		@include font(12, 15);
+		@include media(">=lg") {
+			@include font(16, 19);
+		}
+		@include media("<xs") {
+			@include font(10, 13);
+		}
+		&:hover .block-form__input {
+			border-color: $color-jaffa;
+		}
+		&:hover .block-form__radios {
+			border-color: $color-jaffa;
+		}
+		&:hover .block-form__label {
+			color: $color-jaffa;
+		}
+	}
+	&__label {
+		color: $color-eperor;
+		cursor: pointer;
+		transition: color $default-transition;
+		@include font(10, 12);
+		@include media(">=lg") {
+			@include font(12, 15);
+		}
+	}
+	&__input-box {
+		display: flex;
+	}
+	&__input {
+		color: $color-gray;
+		padding: rem(10) rem(10) rem(10) rem(40);
+		@include input-select-border();
+		overflow: hidden;
+		width: 100%;
+		&:focus {
+			color: $color-jaffa;
+		}
+		&--name {
+			color: $color-mine-shaft;
+		}
+		&--submit {
+			background-color: $color-jaffa;
+			color: $color-white;
+			@include font(16, 19);
+			padding: rem(16) rem(43);
+			border-radius: rem(12);
+			overflow: hidden;
+			margin-bottom: rem(50);
+			border: rem(2) dashed transparent;
+			cursor: pointer;
+			transition: box-shadow $default-transition, border $default-transition;
+			&:hover {
+				box-shadow: rem(-3) rem(-3) rem(20) $color-jaffa;
+				border: rem(2) dashed $color-white;
+			}
+			@include media("<xs") {
+				padding: rem(10) rem(23);
+			}
+		}
+	}
+	&__group {
+		display: flex;
+		justify-content: space-between;
+		gap: 1%;
+		&--el {
+			flex-basis: 48.5%;
+			max-width: 48.5%;
+			@include media("<xs") {
+				flex-basis: 100%;
+				max-width: 100%;
+			}
+		}
+		@include media("<xs") {
+			flex-direction: column;
+		}
+	}
+
+	&__button {
+		display: flex;
+		justify-content: flex-end;
+		margin-top: rem(52);
+		@include media(">=lg") {
+			margin-top: rem(61);
+		}
+	}
+	&__custom-select {
+		position: relative;
+		&[open] summary::before {
+			content: "";
+			display: block;
+			width: 100vw;
+			height: 100vh;
+			background: transparent;
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
+		&[open] summary {
+			border: rem(1) solid $color-jaffa;
+			padding: rem(10) rem(10) rem(10) 0;
+			width: initial;
+		}
+		&[open] .block-form__radio:checked::before {
+			border-left: none;
+		}
+		&[open] summary:after {
+			transform: rotate(-45deg) translate(0%, 0%);
+		}
+		//arrow
+		& summary:after {
+			content: "";
+			position: absolute;
+			right: rem(20);
+			top: rem(12);
+			width: 0.5rem;
+			height: 0.5rem;
+			border-bottom: rem(3) solid $color-jaffa;
+			border-left: rem(3) solid $color-jaffa;
+			border-bottom-left-radius: rem(2);
+			transform: rotate(45deg) translate(50%, 0%);
+			transform-origin: center center;
+			transition: $default-transition;
+			@include media(">=lg") {
+				top: rem(14);
+			}
+		}
+		& summary:focus {
+			outline: none;
+		}
+	}
+	&__list {
+		width: 100%;
+		background: $color-jaffa;
+		position: absolute;
+		top: calc(100% + rem(0.5));
+		left: 0;
+		padding: rem(1);
+		margin: 0;
+		box-sizing: border-box;
+		border-radius: rem(12);
+		max-height: rem(200);
+		overflow-y: scroll;
+		counter-reset: labels;
+		padding-bottom: rem(10);
+		z-index: 1;
+	}
+	&__list-item {
+		margin: 0;
+		padding: rem(10);
+		border-bottom: rem(1) solid $color-white;
+		font-size: rem(10);
+		&:last-child {
+			border-bottom: none;
+			padding-bottom: 0;
+		}
+	}
+	&__radios {
+		padding: rem(10) rem(10) rem(10) 0;
+		cursor: pointer;
+		@include input-select-border();
+		background-color: $color-white;
+		list-style: none;
+		border-radius: rem(12);
+		counter-reset: radios;
+		width: 100%;
+		@include media(">=lg") {
+			padding: rem(10) rem(20) rem(10) 0;
+		}
+		&::before {
+			content: var(--selection);
+		}
+		&::-webkit-details-marker {
+			display: none;
+		}
+	}
+	&__radio {
+		counter-increment: radios;
+		appearance: none;
+		display: none;
+		&:checked {
+			display: inline;
+			--display: block;
+			color: $color-gray;
+		}
+		&:checked::before {
+			content: "🌇";
+			padding: rem(10);
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-top-left-radius: rem(12);
+			border-bottom-left-radius: rem(12);
+		}
+		//"your country"
+		&::after {
+			content: attr(title);
+			display: inline;
+			padding-left: rem(40);
+			@include font(12, 15);
+			@include media(">=lg") {
+				@include font(16, 19);
+			}
+			@include media("<xs") {
+				@include font(10, 13);
+			}
+		}
+	}
+	&__list-label {
+		width: 100%;
+		display: flex;
+		cursor: pointer;
+		justify-content: space-between;
+	}
+	&
+		.block-form__info-group:nth-of-type(1)
+		.block-form__element:nth-of-type(1)
+		.block-form__input-box::before {
+		content: "📧";
+		@include input-icon();
+	}
+	&
+		.block-form__info-group:nth-of-type(1)
+		.block-form__element:nth-of-type(2)
+		.block-form__input-box::before {
+		content: "📞";
+		@include input-icon();
+	}
+	&
+		.block-form__info-group:nth-of-type(2)
+		.block-form__element:nth-of-type(1)
+		.block-form__input-box::before {
+		content: "🧑";
+		@include input-icon();
+	}
+	&
+		.block-form__info-group:nth-of-type(2)
+		.block-form__element:nth-of-type(2)
+		.block-form__input-box::before {
+		content: "🏡";
+		@include input-icon();
+	}
+	&
+		.block-form__info-group:nth-of-type(2)
+		.block-form__element:nth-of-type(3)
+		.block-form__input-box::before {
+		content: "🌇";
+		@include input-icon();
+	}
+	&
+		.block-form__info-group:nth-of-type(2)
+		.block-form__group
+		.block-form__element:nth-of-type(2)
+		.block-form__input-box::before {
+		content: "📪";
+		@include input-icon();
+	}
+	&__checkbox-container {
+		display: flex;
+		align-items: center;
+		gap: 2%;
+		margin-bottom: rem(15);
+		position: absolute;
+		min-width: rem(250);
+		&::after {
+			content: "";
+			display: block;
+			opacity: 0;
+			width: rem(1);
+			height: rem(1);
+			transition: transform 2s linear, opacity 3s;
+			border-radius: 50%;
+			overflow: hidden;
+			position: absolute;
+			left: 4%;
+			top: 70%;
+			background-color: $color-jaffa;
+		}
+		&:hover.block-form__checkbox-container::after {
+			content: "";
+			transform: scale(40);
+			opacity: 0.5;
+		}
+		&:not(:hover).block-form__checkbox-container::after {
+			transform: scale(1);
+			content: "";
+			opacity: 0;
+		}
+	}
+	&__checkbox {
+		display: none;
+		&:checked ~ .block-form__label--checkbox::after {
+			content: url("file:///C:/Users/Ma%C5%82gorzata/Documents/chop-chop-staz/edu-start-malogrzata-banaszkiewicz/checkout-page/src/images/35514495_green_eco_loop_leaf_check_mark.svg");
+			display: block;
+			width: rem(18);
+			height: rem(18);
+			border: rem(1) solid $color-gray;
+			border-radius: rem(5);
+			overflow: hidden;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	}
+	&__label--checkbox {
+		padding-left: rem(28);
+	}
+	&__label--checkbox::before {
+		content: "";
+		display: block;
+		width: 18px;
+		height: 18px;
+		border: rem(1) solid $color-gray;
+		border-radius: rem(5);
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	.block-form__label--checkbox::after {
+		content: "";
+		display: block;
+	}
+}

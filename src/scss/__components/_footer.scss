@@ -1,0 +1,24 @@
+.main-footer {
+	margin: rem(20) 0;
+
+	@include media(">=lg") {
+		margin: rem(40) 0;
+	}
+
+	&__owner {
+		color: $color-silver;
+		text-align: center;
+		@include font(14, 17);
+	}
+
+	&__owner-name {
+		font-weight: $font-weight-bold;
+		color: $color-silver;
+		transition: $default-transition;
+		text-decoration: underline;
+
+		&:hover {
+			color: $color-black;
+		}
+	}
+}

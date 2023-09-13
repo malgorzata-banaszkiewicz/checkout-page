@@ -1,0 +1,62 @@
+/*MIXINS*/
+
+@use "sass:math";
+
+@function rem($sizeValue: 16) {
+	@return math.div($sizeValue, 16) + rem;
+}
+
+@function rel($size, $rel) {
+	@return math.div($size, $rel);
+}
+
+@function em($size, $rel: $font-size-base) {
+	@return rel($size, $rel) * 1em;
+}
+
+@mixin font(
+	$fontSize: $font-size-base,
+	$lineHeight: $line-height-base,
+	$fontWeight: false,
+	$letterSpacing: false,
+	$fontStyle: false,
+	$fontFamily: false
+) {
+	font-size: rem($fontSize);
+	line-height: rel($lineHeight, $fontSize);
+
+	@if $fontFamily {
+		font-family: $fontFamily;
+	}
+
+	@if $letterSpacing {
+		letter-spacing: rem($letterSpacing);
+	}
+
+	@if $fontWeight {
+		font-weight: $fontWeight;
+	}
+
+	@if $fontStyle {
+		font-style: $fontStyle;
+	}
+}
+
+@mixin object-fit-cover() {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	object-fit: cover;
+}
+
+@mixin input-select-border() {
+	border: rem(1) solid $color-gray;
+	border-radius: rem(12);
+}
+
+@mixin input-icon() {
+	padding: rem(10);
+	position: absolute;
+}
