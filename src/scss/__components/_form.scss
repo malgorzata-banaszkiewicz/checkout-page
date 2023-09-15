@@ -277,7 +277,7 @@
 		align-items: center;
 		gap: 2%;
 		margin-bottom: rem(15);
-		position: absolute;
+		position: relative;
 		min-width: rem(250);
 		&::after {
 			content: "";
@@ -289,14 +289,14 @@
 			border-radius: 50%;
 			overflow: hidden;
 			position: absolute;
-			left: 2.5%;
-			top: 40.5%;
+			top: 37%;
+			left: 0.7%;
 			background-color: $color-silver;
 		}
 		&:hover.block-form__checkbox-container::after {
 			content: "";
 			transform: scale(30);
-			opacity: 0.5;
+			opacity: 0.3;
 		}
 		&:not(:hover).block-form__checkbox-container::after {
 			transform: scale(1);
@@ -336,5 +336,6 @@
 	.block-form__label--checkbox::after {
 		content: "";
 		display: block;
+		position: relative;
 	}
 }
