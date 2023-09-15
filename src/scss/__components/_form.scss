@@ -289,13 +289,13 @@
 			border-radius: 50%;
 			overflow: hidden;
 			position: absolute;
-			left: 4%;
-			top: 70%;
-			background-color: $color-jaffa;
+			left: 2.5%;
+			top: 40.5%;
+			background-color: $color-silver;
 		}
 		&:hover.block-form__checkbox-container::after {
 			content: "";
-			transform: scale(40);
+			transform: scale(30);
 			opacity: 0.5;
 		}
 		&:not(:hover).block-form__checkbox-container::after {
@@ -307,7 +307,7 @@
 	&__checkbox {
 		display: none;
 		&:checked ~ .block-form__label--checkbox::after {
-			content: url("file:///C:/Users/Ma%C5%82gorzata/Documents/chop-chop-staz/edu-start-malogrzata-banaszkiewicz/checkout-page/src/images/35514495_green_eco_loop_leaf_check_mark.svg");
+			content: url("../images/check.svg");
 			display: block;
 			width: rem(18);
 			height: rem(18);
