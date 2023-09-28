@@ -164,7 +164,7 @@
 	}
 	&__list-item {
 		margin: 0;
-		padding: rem(10);
+
 		border-bottom: rem(1) solid $color-white;
 		font-size: rem(10);
 		&:last-child {
@@ -227,7 +227,13 @@
 		width: 100%;
 		display: flex;
 		cursor: pointer;
+		padding: rem(10);
 		justify-content: space-between;
+		transition: color $default-transition, background-color $default-transition;
+		&:hover {
+			background-color: $color-white;
+			color: $color-jaffa;
+		}
 	}
 	&
 		.block-form__info-group:nth-of-type(1)
@@ -276,8 +282,8 @@
 		display: flex;
 		align-items: center;
 		gap: 2%;
-		margin-bottom: rem(15);
-		position: relative;
+		margin: rem(8) 0 rem(15);
+		position: absolute;
 		min-width: rem(250);
 		&::after {
 			content: "";
@@ -285,18 +291,20 @@
 			opacity: 0;
 			width: rem(1);
 			height: rem(1);
-			transition: transform 2s linear, opacity 3s;
+			transition: transform 0.3s linear, opacity 0.3s;
 			border-radius: 50%;
 			overflow: hidden;
 			position: absolute;
-			top: 37%;
-			left: 0.7%;
+			left: rem(8);
+			top: calc(50% - rem(1));
+			transform: translateY(-50%);
 			background-color: $color-silver;
+			cursor: pointer;
 		}
 		&:hover.block-form__checkbox-container::after {
 			content: "";
 			transform: scale(30);
-			opacity: 0.3;
+			opacity: 0.5;
 		}
 		&:not(:hover).block-form__checkbox-container::after {
 			transform: scale(1);
@@ -308,34 +316,28 @@
 		display: none;
 		&:checked ~ .block-form__label--checkbox::after {
 			content: url("../images/check.svg");
-			display: block;
-			width: rem(18);
-			height: rem(18);
-			border: rem(1) solid $color-gray;
-			border-radius: rem(5);
 			overflow: hidden;
-			position: absolute;
-			left: 0;
-			top: 0;
 		}
 	}
 	&__label--checkbox {
 		padding-left: rem(28);
+
+		&::before, &::after {
+			content: "";
+			display: block;
+			width: 18px;
+			height: 18px;
+			border: rem(1) solid $color-gray;
+			border-radius: rem(5);
+			left: 0;
+			top: calc(50% - rem(1));
+			transform: translateY(-50%);
+			position: absolute;
+		}
 	}
-	&__label--checkbox::before {
-		content: "";
-		display: block;
-		width: 18px;
-		height: 18px;
-		border: rem(1) solid $color-gray;
-		border-radius: rem(5);
-		position: absolute;
-		left: 0;
-		top: 0;
-	}
+
 	.block-form__label--checkbox::after {
 		content: "";
 		display: block;
-		position: relative;
 	}
 }
